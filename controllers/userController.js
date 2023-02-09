@@ -68,7 +68,6 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
 
-  // not currently working
   removeFriend(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },
