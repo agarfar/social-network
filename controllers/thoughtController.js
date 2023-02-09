@@ -5,12 +5,14 @@ module.exports = {
   // Then we return the results as JSON, and catch any errors. Errors are sent as JSON with a message and a 500 status code
   getThoughts(req, res) {
     Thought.find()
+      .populate({ path: 'reactions', select: '-__v' })
       .then((thoughts) => res.json(thoughts))
       .catch((err) => res.status(500).json(err));
   },
   // Gets a single thought using the findOneAndUpdate method. We pass in the ID of the thought and then respond with it, or an error if not found
   getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
+      .populate({ path: 'reactions', select: '-__v' })
       .then((thought) =>
         !thought
           ? res.status(404).json({ message: 'No thought with that ID' })
