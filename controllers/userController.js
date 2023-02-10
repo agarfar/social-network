@@ -1,6 +1,6 @@
 const { User, Thought } = require('../models');
 
-const formatDate = require('./utils/formatDate.js')
+// const formatDate = require('./utils/formatDate.js')
 
 module.exports = {
   // Get all users
