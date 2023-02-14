@@ -56,6 +56,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
 
+  // add friend by friendId (another user's id)
   addFriend(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },
@@ -70,6 +71,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
 
+  // remove friend from friends array
   removeFriend(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },

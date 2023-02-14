@@ -1,9 +1,10 @@
 const { Schema, model } = require('mongoose');
 const Reaction = require('./Reaction');
 const formatDate = require('../utils/formatDate.js');
+// import function to properly format timestamp
 
 
-// Schema to create Post model
+// Schema to create Thought model
 const thoughtSchema = new Schema(
   {
     thoughtText: {
@@ -16,6 +17,7 @@ const thoughtSchema = new Schema(
       type: Date,
       default: Date.now,
       get: timestamp => formatDate(timestamp)
+      // format the date
     },
     username: {
       type: String,
@@ -32,7 +34,7 @@ const thoughtSchema = new Schema(
   }
 );
 
-// Create a virtual property `reactionCount` that gets the amount of tags associated with an application
+// Create a virtual property `reactionCount` that gets the amount of reactions associated with an application
 thoughtSchema
   .virtual('reactionCount')
   // Getter

@@ -10,23 +10,24 @@ const userSchema = new Schema(
       unique: true,
       trim: true,
       match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, "Not a valid email!"],
+      // validates email
     },
     thoughts: [
       {
         type: Schema.Types.ObjectId,
         ref: 'thought',
       },
+      // reference Thought model
     ],
     friends: [
       {
         type: Schema.Types.ObjectId,
         ref: 'user',
       }
+      // self reference User model
     ]
   },
   {
-    // Mongoose supports two Schema options to transform Objects after querying MongoDb: toJSON and toObject.
-    // Here we are indicating that we want virtuals to be included with our response, overriding the default behavior
     toJSON: {
       virtuals: true,
     },
@@ -34,7 +35,7 @@ const userSchema = new Schema(
   }
 );
 
-// Create a virtual property `friendCount` that gets and sets the user's total count of friends
+// Create a virtual property `friendCount` that gets  the user's total count of friends
 userSchema
   .virtual('friendCount')
   // Getter

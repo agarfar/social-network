@@ -44,7 +44,7 @@ module.exports = {
         res.status(500).json(err);
       });
   },
-  // Updates and thought using the findOneAndUpdate method. Uses the ID, and the $set operator in mongodb to inject the request body. Enforces validation.
+  // Updates a thought using the findOneAndUpdate method. Uses the ID, and the $set operator in mongodb to inject the request body. Enforces validation.
   updateThought(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
@@ -61,8 +61,8 @@ module.exports = {
         res.status(500).json(err);
       });
   },
-  // Deletes an thought from the database. Looks for an thought by ID.
-  // Then if the thought exists, we look for any users associated with the thought based on he thought ID and update the thoughts array for the User.
+  // Deletes a thought from the database. Looks for an thought by ID.
+  // Then if the thought exists, we look for any users associated with the thought based on the thought ID and update the thoughts array for the User.
   deleteThought(req, res) {
     Thought.findOneAndRemove({ _id: req.params.thoughtId })
       .then((thought) =>
@@ -83,7 +83,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  // Adds a reaction to an thought. This method is unique in that we add the entire body of the reaction rather than the ID with the mongodb $addToSet operator.
+  // Adds a reaction to an thought.
   addReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
