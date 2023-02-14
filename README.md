@@ -89,7 +89,11 @@ After running the application with 'npm run start', the user can access the pred
 * `DELETE` to pull and remove a reaction by the reaction's `reactionId` value (`/api/thoughts/:thoughtId/reactions/:reactionId`)
 
 
-### Video Tutorial:
+### Video Tutorial
+
+Link to Google Drive: https://drive.google.com/file/d/1XpQgJlJFgsg4KR57PPuFU_RT_94k9IB7/view
+
+
 
 
 ## License
