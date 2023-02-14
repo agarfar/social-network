@@ -94,6 +94,7 @@ After running the application with 'npm run start', the user can access the pred
 Link to Google Drive: https://drive.google.com/file/d/1XpQgJlJFgsg4KR57PPuFU_RT_94k9IB7/view
 
 
+https://user-images.githubusercontent.com/64799305/218652242-67d6a4af-af11-4dc1-a149-a6a6eae4a116.mp4
 
 
 ## License
